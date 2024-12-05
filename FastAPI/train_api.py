@@ -26,6 +26,7 @@ def predict(data:InputData):
     return {"prediction": int(prediction)}
 
 
-# roda usando uvicorn main:app
+# roda usando uvicorn train_api:app
+# posso usar também uvicorn train_api:app --reload para que recarregue caso eu mude o código (somente para ambiente de desenvolvimento)
 # em outro terminal roda: curl -X GET "http://127.0.0.1:8000" para receber a mensagem "Fast API is running"
 # para fazer um post enviando um conjunto de features e receber uma previsão: curl -X POST "http://127.0.0.1:8000/predict" -H "Content-Type: application/json" -d '{"feature1":7.2, "feature2":3.5, "feature3":1.4, "feature4":0.2}'
