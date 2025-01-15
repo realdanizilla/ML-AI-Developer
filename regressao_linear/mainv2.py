@@ -1,5 +1,5 @@
 import numpy as np
-from linear_regression import MyLinearRegression
+from linear_regressionv2 import MyLinearRegression
 
 y = np.array([10,50,100,200,70,20,19])
 
@@ -13,8 +13,12 @@ X = np.array([
     [32,22,1,1.90,0]
 ])
 
+mean = np.mean(X, axis=0)
+std = np.std(X, axis=0)
+X_standardized = (X - mean) / std
+
 model = MyLinearRegression()
-model.fit(X,y)
+model.fit(X_standardized,y)
 a = model.predict(np.array([[35,45,0,1.78,4]]))
 print(a)
 print(model.intercept)
